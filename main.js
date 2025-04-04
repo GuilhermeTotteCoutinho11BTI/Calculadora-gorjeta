@@ -1,6 +1,7 @@
 let bill = 0 
 let tipPercentage = 0
 let numberOfPeople = 0
+let buttonSelected = null
 
 //receber o valor da conta
 let billInput = document.querySelector("#bill")
@@ -20,8 +21,26 @@ function receiveNumberOfPeople() {
     calculate()
 }
 
-function receiverTipPercentage(value) {
-    let buttonSelected = document.querySelector
+function receiveTipPercentage(value) {
+    if (buttonSelected !== null) {
+        buttonSelected.classList.remove("button-selected")
+    }
+
+    buttonSelected = document.querySelector(`#button-${value}`)
+    buttonSelected.classList.add("button-selected")
+    tipPercentage = value / 100
+}
+
+function receiveCustomTipPercentage() {
+    let customTipInput = document.querySelector("#custom tip")
+    console.log(customTipInput.valueAsNumber)
+
+    buttonSelected.classList.remove("button-selected")
+    buttonSelected.classList.add("button-selected")
+    tipPercentage = value / 100
+
+    let customTipInput = document.querySelector("#custom tip")
+    tipPercentage
 }
 
 function calculate() {
